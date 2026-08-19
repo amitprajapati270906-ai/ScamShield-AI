@@ -1,0 +1,521 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #07111f;
+  color: #f8fafc;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, #12233d 0%, #07111f 45%, #030712 100%);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(3, 7, 18, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: #38bdf8;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.hero {
+  width: min(1050px, 90%);
+  margin: 0 auto;
+  padding: 55px 0 70px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 9px 15px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.08);
+  color: #7dd3fc;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.hero h1 {
+  margin-top: 22px;
+  font-size: clamp(42px, 7vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: #38bdf8;
+}
+
+.subtitle {
+  max-width: 650px;
+  margin: 22px auto 38px;
+  color: #94a3b8;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* =========================
+   DASHBOARD STATS
+========================= */
+
+.stats-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 45px;
+}
+
+.stat-card {
+  padding: 21px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.72);
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card span {
+  font-size: 23px;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 9px;
+  font-size: 30px;
+}
+
+.stat-card p {
+  margin-top: 5px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* =========================
+   SCANNER
+========================= */
+
+.scanner-card {
+  width: min(750px, 100%);
+  margin: 0 auto;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.82);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.scanner-card label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.scanner-card textarea {
+  width: 100%;
+  min-height: 150px;
+  resize: vertical;
+  padding: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  outline: none;
+  background: #020617;
+  color: #f8fafc;
+  line-height: 1.6;
+}
+
+.scanner-card textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.08);
+}
+
+.scanner-card textarea::placeholder {
+  color: #64748b;
+}
+
+.scanner-card button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #0ea5e9;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.scanner-card button:hover {
+  transform: translateY(-1px);
+  background: #0284c7;
+}
+
+.scanner-card button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================
+   RESULT CARD
+========================= */
+
+.result-card {
+  width: min(750px, 100%);
+  margin: 28px auto 0;
+  padding: 25px;
+  display: flex;
+  gap: 18px;
+  border-radius: 22px;
+  text-align: left;
+  background: rgba(15, 23, 42, 0.85);
+}
+
+.result-card.scam {
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.result-card.safe {
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.result-card.error {
+  border: 1px solid rgba(234, 179, 8, 0.35);
+}
+
+.result-icon {
+  font-size: 34px;
+}
+
+.result-content {
+  flex: 1;
+}
+
+.result-content h2 {
+  font-size: 23px;
+}
+
+.result-card.scam h2 {
+  color: #f87171;
+}
+
+.result-card.safe h2 {
+  color: #4ade80;
+}
+
+.risk-level {
+  margin-top: 8px;
+  color: #94a3b8;
+}
+
+.risk-level strong {
+  color: #f8fafc;
+}
+
+/* =========================
+   RISK SCORE
+========================= */
+
+.risk-score {
+  margin-top: 22px;
+}
+
+.risk-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  color: #cbd5e1;
+}
+
+.risk-header strong {
+  color: #f8fafc;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #1e293b;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #ef4444;
+  transition: width 0.5s ease;
+}
+
+/* =========================
+   INDICATORS
+========================= */
+
+.indicators {
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 15px;
+  background: rgba(2, 6, 23, 0.65);
+}
+
+.indicators h3 {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.indicators ul {
+  list-style: none;
+}
+
+.indicators li {
+  display: flex;
+  gap: 9px;
+  margin-top: 9px;
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================
+   ANALYZED MESSAGE
+========================= */
+
+.analyzed-message {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(30, 41, 59, 0.55);
+}
+
+.analyzed-message strong {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.analyzed-message p {
+  margin-top: 8px;
+  color: #94a3b8;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+/* =========================
+   HISTORY
+========================= */
+
+.history-section {
+  width: min(900px, 100%);
+  margin: 45px auto 0;
+  text-align: left;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 17px;
+}
+
+.history-header h2 {
+  font-size: 22px;
+}
+
+.history-header p {
+  margin-top: 5px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.clear-button {
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9px;
+  background: transparent;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+.clear-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.history-icon {
+  font-size: 24px;
+}
+
+.history-message {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-message strong {
+  font-size: 13px;
+}
+
+.history-message p {
+  margin-top: 5px;
+  color: #94a3b8;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-risk {
+  text-align: right;
+}
+
+.history-risk strong {
+  display: block;
+  font-size: 14px;
+}
+
+.history-risk span {
+  display: block;
+  margin-top: 4px;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: #64748b;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navbar {
+    padding: 18px 5%;
+  }
+
+  .hero {
+    width: 92%;
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 550px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 15px;
+  }
+
+  .stat-card strong {
+    font-size: 24px;
+  }
+
+  .scanner-card,
+  .result-card {
+    padding: 18px;
+  }
+
+  .result-card {
+    flex-direction: column;
+  }
+
+  .history-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .history-item {
+    align-items: flex-start;
+  }
+
+  .history-risk {
+    text-align: left;
+  }
+}
