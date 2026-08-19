@@ -1,46 +1,46 @@
 # 🛡️ ScamShield AI
 
-ScamShield AI is an AI-powered scam message detection system that analyzes suspicious SMS and messages and identifies whether they are potentially fraudulent.
+### AI-Powered Scam Message Detection System
+
+ScamShield AI is a machine-learning-based web application that analyzes suspicious SMS messages and detects whether they are likely to be **SCAM** or **SAFE**.
+
+It provides a risk score, risk level, and suspicious indicators to help users understand why a message may be dangerous.
+
+---
 
 ## 🚀 Features
 
-- 🔍 AI-powered scam detection
+- 🤖 AI-powered scam message detection
 - 🚨 SCAM / SAFE classification
 - 📊 Risk score from 0–100
-- ⚠️ Risk level detection
-- 🔎 Suspicious indicator detection
+- ⚡ LOW / MEDIUM / HIGH risk levels
+- 🔍 Suspicious indicator detection
 - 🕘 Recent scan history
 - 📈 Dashboard statistics
-- ⚡ FastAPI backend
-- 💻 React + Vite frontend
+- 🌐 React + Vite frontend
+- ⚙️ FastAPI backend
+- 🧠 Machine Learning model
+- 📱 Responsive user interface
 
-## 🧠 How It Works
+---
 
-1. User enters a suspicious message.
-2. React frontend sends the message to the FastAPI backend.
-3. The trained machine learning model analyzes the message.
-4. The backend calculates the risk score.
-5. ScamShield AI returns the prediction and suspicious indicators.
-6. The result is displayed on the dashboard.
+## 🖥️ Screenshots
 
-## 🛠️ Tech Stack
+### Dashboard
 
-### Frontend
-- React
-- Vite
-- JavaScript
-- CSS
+![ScamShield AI Dashboard](screenshots/dashboard.png)
 
-### Backend
-- Python
-- FastAPI
-- Uvicorn
+### Scam Detection
 
-### Machine Learning
-- Scikit-learn
-- Joblib
+![Scam Detection Result](screenshots/scam-result.png)
 
-## 📁 Project Structure
+### Safe Message
+
+![Safe Message Result](screenshots/safe-result.png)
+
+---
+
+## 🏗️ Project Architecture
 
 ```text
 ScamShield-AI/
@@ -53,12 +53,24 @@ ScamShield-AI/
 │   │   ├── App.jsx
 │   │   ├── App.css
 │   │   └── main.jsx
-│   └── package.json
+│   ├── package.json
+│   └── vite.config.js
 │
 ├── ml/
-│   └── models/
-│       └── message_model.pkl
+│   ├── datasets/
+│   │   └── SMSSpamCollection
+│   │
+│   ├── models/
+│   │   └── message_model.pkl
+│   │
+│   └── src/
+│       └── train_message_model.py
 │
 ├── screenshots/
+│   ├── dashboard.png
+│   ├── scam-result.png
+│   └── safe-result.png
+│
 ├── requirements.txt
+├── .gitignore
 └── README.md
